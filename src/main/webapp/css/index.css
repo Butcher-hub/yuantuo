@@ -1,0 +1,88 @@
+/* 去掉默认所有边距 */
+* {
+	margin: 0px;
+	padding: 0px;
+	
+	/* 设置全局过渡 */
+	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+}
+
+/* 去除滚动条 */
+html,
+body {
+	overflow: scroll;
+	overflow: hidden;
+	height: 100%;
+	/* 设置页面高度为浏览器页面的100%,以便子元素按百分比设置时有效果 */
+}
+
+/* 头部 */
+.head {
+	background-color: #1e272e;
+	height: 5%;
+	overflow: hidden;
+}
+
+/* 导航 */
+.nav {
+	background-color: #2f3640;
+	width: 10%;
+	height: 95%;
+	float: left;
+	/* 浮动于左边 */
+	overflow: hidden;
+}
+.nav ul{
+	background-color: #2f3640;
+}
+
+/* 主体 */
+.body {
+	background-color: #FBFBFB;
+	width: 90%;
+	height: 95%;
+	overflow: hidden;
+	position: absolute;
+	left: 10%;
+}
+
+/* 选项卡内容 */
+.tab{
+	padding: 0px;
+	height: 100%;
+	
+}
+
+/* logo的样式 */
+.logo{
+	width: 10%;
+	height: 100%;
+	float: left;
+	
+}
+/* logo中的图片 */
+.logo img{
+	width: 50%;
+	margin-left: 25%;
+}
+
+/* 导航伸缩按钮 */
+.head a i{
+	position: relative;
+	top: 24%;
+	color:white;
+}
+
+/* 头部右侧 */
+.head-right{
+	width: 10%;
+	height: 100%;
+	float: right;
+}
+
+
+
