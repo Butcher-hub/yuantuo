@@ -2,7 +2,7 @@
 
 var tabFilter,menu=[],liIndex,curNav,delMenu;
 layui.define(["element","jquery"],function(exports){
-	var element = layui.element(),
+	var element = layui.element,
 		$ = layui.jquery,
 		layId,
 		Tab = function(){
@@ -16,7 +16,15 @@ layui.define(["element","jquery"],function(exports){
 	//显示左侧菜单
 	if($(".navBar").html() == ''){
 		var _this = this;
-		$(".navBar").html(navBar(navs)).height($(window).height()-230);
+		var jnavs;
+		$.ajaxSetup({
+			async: false
+		});
+		$.getJSON("json/nav.json",function (data,status,xhr) {
+
+			jnavs=data;
+		})
+		$(".navBar").html(navBar(jnavs)).height($(window).height()-230);
 		element.init();  //初始化页面元素
 		$(window).resize(function(){
 			$(".navBar").height($(window).height()-230);
