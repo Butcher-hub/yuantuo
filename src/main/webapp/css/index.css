@@ -1,9 +1,34 @@
-/* 去掉默认所有边距 */
+/*主体*/
+.main_body {
+	min-width: 320px;
+}
+
+.layui-elem-quote.title {
+	padding: 10px 15px;
+	margin-bottom: 0;
+}
+
+.layui-tab-more {
+	position: relative;
+	z-index: 99;
+	background: #fff;
+}
+
+.layui-layer-tab .layui-layer-title span.layui-layer-tabnow {
+	height: 42px !important;
+}
+
+.layui-layer-tab .layui-layer-title span {
+	min-width: 45px !important;
+}
+
+/*模拟加载层图标样式*/
+.layui-layer-dialog .layui-layer-content .layui-layer-ico16 {
+	background-size: 100% 100% !important;
+}
+
+/*全局样式改变的过渡*/
 * {
-	margin: 0px;
-	padding: 0px;
-	
-	/* 设置全局过渡 */
 	transition: all 0.3s ease-in-out;
 	-webkit-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
@@ -11,78 +36,278 @@
 	-ms-transition: all 0.3s ease-in-out;
 }
 
-/* 去除滚动条 */
-html,
-body {
-	overflow: scroll;
-	overflow: hidden;
-	height: 100%;
-	/* 设置页面高度为浏览器页面的100%,以便子元素按百分比设置时有效果 */
-}
-
-/* 头部 */
-.head {
-	background-color: #1e272e;
-	height: 5%;
-	overflow: hidden;
-}
-
-/* 导航 */
-.nav {
-	background-color: #2f3640;
-	width: 10%;
-	height: 95%;
-	float: left;
-	/* 浮动于左边 */
-	overflow: hidden;
-}
-.nav ul{
-	background-color: #2f3640;
-}
-
-/* 主体 */
-.body {
-	background-color: #FBFBFB;
-	width: 90%;
-	height: 95%;
-	overflow: hidden;
-	position: absolute;
-	left: 10%;
-}
-
-/* 选项卡内容 */
-.tab{
-	padding: 0px;
-	height: 100%;
-	
-}
-
 /* logo的样式 */
-.logo{
-	width: 10%;
-	height: 100%;
+.logo {
+	color: #fff;
 	float: left;
-	
-}
-/* logo中的图片 */
-.logo img{
-	width: 50%;
-	margin-left: 25%;
+	line-height: 60px;
+	font-size: 20px;
+	padding: 0 25px;
+	text-align: center;
+	margin-right: 15px;
 }
 
-/* 导航伸缩按钮 */
-.head a i{
+.weather {
+	color: #fff;
+	float: left;
+	margin: 15px 0 0 50px;
+}
+
+.component {
+	float: left;
+	width: 200px;
+	height: 30px;
+	margin-top: 15px;
 	position: relative;
-	top: 24%;
-	color:white;
 }
 
-/* 头部右侧 */
-.head-right{
-	width: 10%;
+.component .layui-input {
+	height: 30px;
+	line-height: 30px;
+	font-size: 12px;
+	border: none;
+	transition: all 0.3s;
+}
+
+.component .layui-input:focus {
+	background: #fff;
+	color: #000;
+}
+
+.component .layui-form-select dl {
+	top: 33px;
+	background: #fff;
+}
+
+.component .layui-form-select .layui-edge,
+.top_menu .layui-nav-item[mobile] {
+	display: none;
+}
+
+.component .layui-icon {
+	position: absolute;
+	right: 8px;
+	top: 8px;
+	color: #000;
+}
+
+/*顶部右侧导航*/
+.top_menu {
+	position: absolute;
+	right: 0;
+	background: none
+}
+
+.top_menu.layui-nav .layui-this:after {
+	width: 0px;
+}
+
+.top_menu.layui-nav .layui-this {
+	background-color: transparent;
+}
+
+.top_menu.layui-nav .layui-this a {
+	color: #c2c2c2;
+}
+
+.top_menu.layui-nav dd.layui-this a {
+	color: #333;
+}
+
+.top_menu.layui-nav .layui-nav-item a:hover {
+	color: #fff;
+}
+
+.top_menu.layui-nav .layui-nav-child a:hover {
+	color: #fff;
+	background-color: #5FB878;
+}
+
+/* 手机端顶部右侧菜单字体 */
+.top_menu .iconfont {
+	font-size: 14px !important;
+}
+
+.top_menu .layui-nav-bar {
+	top: 60px !important;
+	background-color: rgba(0, 0, 0, 0.7)
+}
+
+/*左侧导航重定义*/
+.layui-nav-item a cite {
+	padding: 0 5px;
+}
+
+.layui-side-scroll {
+	height: auto;
+}
+
+.layui-nav-tree .layui-nav-child a {
+	padding-left: 40px;
+}
+
+.layui-nav-tree .layui-nav-child a:hover {
+	background-color: #4E5465;
+}
+
+.layui-nav-tree .layui-nav-child dd.layui-this a:hover {
+	background-color: #009688;
+}
+
+/*右侧body*/
+.layui-body {
+	overflow: hidden;
+}
+
+.layui-tab-content {
 	height: 100%;
-	float: right;
+	padding: 0;
+}
+
+.layui-tab-item {
+	position: absolute;
+	top: 42px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 0;
+	margin: 0;
+	-webkit-overflow-scrolling: touch;
+}
+
+.layui-body {
+	border-top: 5px solid #1AA094;
+	border-left: 2px solid #1AA094;
+}
+
+/* 把外边距去掉 */
+.marg0 {
+	margin: 0;
+}
+
+.layui-tab-title .layui-this {
+	background-color: #1AA094;
+	color: #fff;
+}
+
+.layui-tab-title .layui-this:after {
+	border: none;
+}
+
+.layui-tab-title li cite {
+	font-style: normal;
+	padding-left: 5px;
+}
+
+.clildFrame.layui-tab-content {
+	padding-right: 0;
+}
+
+.clildFrame.layui-tab-content iframe {
+	width: 100%;
+	height: 100%;
+	border: none;
+	min-width: 320px;
 }
 
 
+/*底部*/
+.footer {
+	text-align: center;
+	line-height: 44px;
+	border-left: 2px solid #1AA094;
+}
 
+
+/*响应式*/
+@media screen and (max-width:1282px) {
+	.panel {
+		width: 33.3333%;
+	}
+}
+
+@media screen and (max-width: 750px) {
+	.logo {
+		padding: 0;
+	}
+
+	.top_menu .layui-nav-item[pc],
+	.component,
+	.site-mobile .site-tree-mobile {
+		display: none !important;
+	}
+
+	.top_menu .layui-nav-item.showNotice[pc] {
+		display: inline-block !important;
+	}
+
+	.top_menu .layui-nav-item[mobile] {
+		display: inline-block;
+	}
+
+	.layui-nav.top_menu,
+	.layui-nav.top_menu .layui-nav-item a {
+		padding: 0 10px;
+	}
+
+/* 顶部样式 */
+	.layui-layout-admin .layui-main {
+		margin-right: 0;
+	}
+
+	/*左侧导航*/
+	.layui-layout-admin .layui-side {
+		left: -260px;
+	}
+
+	.site-mobile .layui-side {
+		left: 0;
+		z-index: 9999;
+	}
+
+	.site-tree-mobile {
+		display: block !important;
+		position: fixed;
+		z-index: 100000;
+		bottom: 15px;
+		left: 15px;
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+		border-radius: 2px;
+		text-align: center;
+		background-color: rgba(0, 0, 0, .7);
+		color: #fff;
+	}
+
+	.site-mobile .site-mobile-shade {
+		content: '';
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color: rgba(0, 0, 0, .8);
+		z-index: 999;
+	}
+
+	/*layui-body*/
+	.panel {
+		width: 50%;
+	}
+
+	.layui-body,
+	.layui-layout-admin .layui-footer {
+		left: 0;
+	}
+}
+
+@media screen and (max-width:432px) {
+	.top_menu .layui-nav-item.showNotice[pc] {
+		display: none !important;
+	}
+
+	.panel {
+		width: 100%;
+	}
+}
