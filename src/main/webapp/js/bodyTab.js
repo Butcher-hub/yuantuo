@@ -20,9 +20,12 @@ layui.define(["element","jquery"],function(exports){
 		$.ajaxSetup({
 			async: false
 		});
+		debugger
 		$.getJSON("json/nav.json",function (data,status,xhr) {
 
 			jnavs=data;
+
+			console.log(data)
 		})
 		$(".navBar").html(navBar(jnavs)).height($(window).height()-230);
 		element.init();  //初始化页面元素
