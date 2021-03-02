@@ -17,15 +17,13 @@ layui.define(["element","jquery"],function(exports){
 	if($(".navBar").html() == ''){
 		var _this = this;
 		var jnavs;
+		// 设置同步
 		$.ajaxSetup({
 			async: false
 		});
-		debugger
+		// 获取本地json数据
 		$.getJSON("json/nav.json",function (data,status,xhr) {
-
 			jnavs=data;
-
-			console.log(data)
 		})
 		$(".navBar").html(navBar(jnavs)).height($(window).height()-230);
 		element.init();  //初始化页面元素
