@@ -27,7 +27,8 @@ public class DButil {
     public DButil(){
         Properties properties = new Properties();
         try {
-            properties.load(new FileInputStream("dbConnectionConfig.properties"));
+//            加载配置文件
+            properties.load(new FileInputStream("src/main/resources/dbConnectionConfig.properties"));
             this.path = properties.getProperty("path");
             this.username = properties.getProperty("username");
             this.password = properties.getProperty("password");
@@ -35,11 +36,7 @@ public class DButil {
             Class.forName(path);
             this.conn = DriverManager.getConnection(url,username,password);
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
+        } catch (IOException | ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
     }
@@ -86,7 +83,7 @@ public class DButil {
     /**
      * 关闭所有流
      */
-    public void CloseAll(){
+    public void closeAll(){
         if (rs!=null){
             try {
                 rs.close();
