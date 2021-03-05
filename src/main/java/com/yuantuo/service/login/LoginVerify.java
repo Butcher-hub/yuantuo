@@ -1,5 +1,9 @@
 package com.yuantuo.service.login;
 
+import com.yuantuo.dao.common.DButil;
+import com.yuantuo.dao.login.DaoEmployee;
+import com.yuantuo.dao.login.daoimp.DaoEmployeeImp;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -7,6 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  * @Author: butcher
@@ -28,6 +35,23 @@ public class LoginVerify extends HttpServlet {
         String eVerify = request.getParameter("eVerify");
 
 //        查数据库
+        DaoEmployee daoEmployee = new DaoEmployeeImp();
+        String[] pj = daoEmployee.getPasswordJurisdiction(eId);
+
+//        判断员工是否存在
+        if (pj!=null){
+//            员工存在，判断密码是否正确
+            if(ePassword.equals(pj[0])){
+//                  密码正确
+//                判断验证码是否正确
+            }else {
+//                密码错误
+            }
+        }else {
+//            员工不存在
+        }
+
+
 
 //        创建输出流
         PrintWriter out = response.getWriter();

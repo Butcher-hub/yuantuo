@@ -28,7 +28,7 @@ public class DButil {
         Properties properties = new Properties();
         try {
 //            加载配置文件
-            properties.load(new FileInputStream("src/main/resources/dbConnectionConfig.properties"));
+            properties.load(new FileInputStream("src/main/resources/dbConnectionConfig.properties"));//这里的路径先暂时这么写
             this.path = properties.getProperty("path");
             this.username = properties.getProperty("username");
             this.password = properties.getProperty("password");
@@ -38,11 +38,12 @@ public class DButil {
 
         } catch (IOException | ClassNotFoundException | SQLException e) {
             e.printStackTrace();
+            System.out.println("来DButil的构造方法里看看路径吧，线上环境的路径和开发环境的路径有点点区别");
         }
     }
 
     /**
-     * 获取连接之后的Connection
+     * 获取连接之后的Connection,可以通过它开启事务，回滚事务......
      * @return
      */
     public Connection getConn() {
@@ -65,20 +66,14 @@ public class DButil {
     }
 
     /**
-     * 获取结果集
+     * 获取结果集,这样的目的是为了可以一键关闭流
      * @return 结果集 ResultSet
-     */
-    public ResultSet getRs() {
-        return rs;
-    }
-
-    /**
-     * 设置结果集
      * @param rs ResultSet
      */
-    public void setRs(ResultSet rs) {
-        this.rs = rs;
+    public ResultSet getRs(ResultSet rs) {
+        return this.rs = rs;
     }
+
 
     /**
      * 关闭所有流
